@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Maanu 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffe2ff);
+      color: #4b2e83;
+    }
+    header {
+      background-color: #ff99cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #fff0f5;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+    nav button {
+      background-color: #ffb6c1;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    nav button:hover {
+      background-color: #ff69b4;
+      color: white;
+    }
+    section {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 0.8s;
+    }
+    section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .letter {
+      white-space: pre-wrap;
+      background-color: #fff5f8;
+      padding: 15px;
+      border-radius: 10px;
+      border-left: 5px solid #ff69b4;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>For My Beautiful Maanu 💖</header>
+
+  <nav>
+    <button onclick="showTab('about')">About You</button>
+    <button onclick="showTab('apology')">My Apology</button>
+    <button onclick="showTab('memories')">Memories</button>
+    <button onclick="showTab('letters')">Love Letters</button>
+    <button onclick="showTab('special')">Why You're Special</button>
+    <button onclick="showTab('surprise')">A Surprise</button>
+  </nav>
+
+  <section id="about" class="active">
+    <h2>You are Beautiful 💕</h2>
+    <p>Maanu, your smile lights up the darkest days. Your presence is a gift, your soul is gold. You’re perfect in ways you don’t even realize.</p>
+  </section>
+
+  <section id="apology">
+    <h2>I'm Sorry, Maanu 😔</h2>
+    <div class="letter">
+      Maanu,
+
+      I'm truly sorry for anything I've said or done that ever hurt you. You don’t deserve pain—not even a little. I may not always be perfect, but please know that my heart beats for you and only you.
+
+      I miss your smile. I miss us.
+
+      Please forgive me. 💔
+    </div>
+  </section>
+
+  <section id="memories">
+    <h2>Our Sweet Memories 📸</h2>
+    <p>(Add your own photos or replace placeholders)</p>
+    <ul>
+      <li>🌸 Our first chat</li>
+      <li>🌹 That one moment we laughed nonstop</li>
+      <li>🌟 The day I realized I can't live without you</li>
+    </ul>
+  </section>
+
+  <section id="letters">
+    <h2>Love Letters ✉️</h2>
+    <div class="letter">
+      To the one who holds my heart...
+
+      You are my forever person. Even when we fight, even when I’m lost in my flaws — you’re the reason I want to be better. You are the light I never want to lose.
+    </div>
+  </section>
+
+  <section id="special">
+    <h2>Why You're So Special ✨</h2>
+    <ul>
+      <li>🌼 Kindness that warms hearts</li>
+      <li>💫 Eyes full of dreams</li>
+      <li>🎨 Creativity that amazes</li>
+      <li>❤️ A soul that's one of a kind</li>
+    </ul>
+  </section>
+
+  <section id="surprise">
+    <h2>A Little Surprise 🌹</h2>
+    <p>Click the heart below and watch the magic...</p>
+    <div style="text-align:center;font-size:3rem;cursor:pointer" onclick="hearts()">❤️</div>
+    <div id="hearts-area"></div>
+  </section>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function hearts() {
+      const area = document.getElementById('hearts-area');
+      area.innerHTML = '';
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.textContent = '💖';
+        heart.style.position = 'absolute';
+        heart.style.top = `${Math.random() * 80 + 10}%`;
+        heart.style.left = `${Math.random() * 90 + 5}%`;
+        heart.style.fontSize = `${Math.random() * 2 + 1}rem`;
+        heart.style.transform = `rotate(${Math.random() * 360}deg)`;
+        heart.style.animation = 'float 2s ease-in-out infinite';
+        area.appendChild(heart);
+      }
+    }
+  </script>
+</body>
+</html>
